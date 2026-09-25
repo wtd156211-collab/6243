@@ -1,0 +1,41 @@
+{
+  "name": "timeout",
+  "max_waiters": 4,
+  "max_inflight": 2,
+  "default_duration": 60,
+  "default_timeout": 200,
+  "events": [
+    {
+      "t": 0,
+      "arrive": "r1",
+      "key": "stock-42",
+      "duration": 60,
+      "timeout": 60
+    },
+    {
+      "t": 5,
+      "arrive": "r2",
+      "key": "stock-42",
+      "timeout": 200
+    },
+    {
+      "t": 10,
+      "arrive": "r3",
+      "key": "stock-42",
+      "timeout": 30
+    },
+    {
+      "t": 70,
+      "arrive": "r4",
+      "key": "basket-9",
+      "duration": 50,
+      "timeout": 20
+    },
+    {
+      "t": 75,
+      "arrive": "r5",
+      "key": "basket-9",
+      "timeout": 20
+    }
+  ]
+}

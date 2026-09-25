@@ -1,0 +1,18 @@
+0000|ARRIVE|r1|cart-total|-|-
+0000|START|-|cart-total|e1|duration=50
+0005|ARRIVE|r2|cart-total|-|-
+0005|MERGE|r2|cart-total|e1|pos=2
+0010|ARRIVE|r3|cart-total|-|-
+0010|MERGE|r3|cart-total|e1|pos=3
+0015|CANCEL|r2|cart-total|e1|reason=user
+0020|ARRIVE|r4|cart-total|-|-
+0020|MERGE|r4|cart-total|e1|pos=3
+0025|CANCEL|r1|cart-total|e1|reason=user
+0030|CANCEL|r3|cart-total|e1|reason=user
+0035|CANCEL|r4|cart-total|e1|reason=user
+0035|XCANCEL|-|cart-total|e1|reason=no_waiters
+0040|ARRIVE|r5|cart-total|-|-
+0040|START|-|cart-total|e2|duration=10
+0050|XEND|-|cart-total|e2|result=ok
+0050|RETURN|r5|cart-total|e2|result=ok
+0050|SUMMARY|-|-|-|arrive=5 cancel=4 err=0 exec=2 merge=3 ok=1 reject=0 return=1 xcancel=1

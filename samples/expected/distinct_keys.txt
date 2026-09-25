@@ -1,0 +1,26 @@
+0000|ARRIVE|r1|kA|-|-
+0000|START|-|kA|e1|duration=20
+0001|ARRIVE|r2|kB|-|-
+0001|START|-|kB|e2|duration=40
+0002|ARRIVE|r3|kA|-|-
+0002|MERGE|r3|kA|e1|pos=2
+0003|ARRIVE|r4|kC|-|-
+0003|START|-|kC|e3|duration=10
+0004|ARRIVE|r5|kB|-|-
+0004|MERGE|r5|kB|e2|pos=2
+0005|ARRIVE|r6|kC|-|-
+0005|MERGE|r6|kC|e3|pos=2
+0013|XEND|-|kC|e3|result=ok
+0013|RETURN|r4|kC|e3|result=ok
+0013|RETURN|r6|kC|e3|result=ok
+0014|ARRIVE|r7|kC|-|-
+0014|START|-|kC|e4|duration=8
+0020|XEND|-|kA|e1|result=ok
+0020|RETURN|r1|kA|e1|result=ok
+0020|RETURN|r3|kA|e1|result=ok
+0022|XEND|-|kC|e4|result=ok
+0022|RETURN|r7|kC|e4|result=ok
+0041|XEND|-|kB|e2|result=err
+0041|RETURN|r2|kB|e2|result=err
+0041|RETURN|r5|kB|e2|result=err
+0041|SUMMARY|-|-|-|arrive=7 cancel=0 err=1 exec=4 merge=3 ok=3 reject=0 return=7 xcancel=0

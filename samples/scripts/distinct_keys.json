@@ -1,0 +1,49 @@
+{
+  "name": "distinct_keys",
+  "max_waiters": 3,
+  "max_inflight": 3,
+  "default_duration": 30,
+  "default_timeout": 500,
+  "events": [
+    {
+      "t": 0,
+      "arrive": "r1",
+      "key": "kA",
+      "duration": 20
+    },
+    {
+      "t": 1,
+      "arrive": "r2",
+      "key": "kB",
+      "duration": 40,
+      "result": "err"
+    },
+    {
+      "t": 2,
+      "arrive": "r3",
+      "key": "kA"
+    },
+    {
+      "t": 3,
+      "arrive": "r4",
+      "key": "kC",
+      "duration": 10
+    },
+    {
+      "t": 4,
+      "arrive": "r5",
+      "key": "kB"
+    },
+    {
+      "t": 5,
+      "arrive": "r6",
+      "key": "kC"
+    },
+    {
+      "t": 14,
+      "arrive": "r7",
+      "key": "kC",
+      "duration": 8
+    }
+  ]
+}

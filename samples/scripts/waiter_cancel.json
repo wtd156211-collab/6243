@@ -1,0 +1,56 @@
+{
+  "name": "waiter_cancel",
+  "max_waiters": 4,
+  "max_inflight": 2,
+  "default_duration": 50,
+  "default_timeout": 600,
+  "events": [
+    {
+      "t": 0,
+      "arrive": "r1",
+      "key": "cart-total",
+      "duration": 50
+    },
+    {
+      "t": 5,
+      "arrive": "r2",
+      "key": "cart-total"
+    },
+    {
+      "t": 10,
+      "arrive": "r3",
+      "key": "cart-total"
+    },
+    {
+      "t": 15,
+      "cancel": "r2",
+      "reason": "user"
+    },
+    {
+      "t": 20,
+      "arrive": "r4",
+      "key": "cart-total"
+    },
+    {
+      "t": 25,
+      "cancel": "r1",
+      "reason": "user"
+    },
+    {
+      "t": 30,
+      "cancel": "r3",
+      "reason": "user"
+    },
+    {
+      "t": 35,
+      "cancel": "r4",
+      "reason": "user"
+    },
+    {
+      "t": 40,
+      "arrive": "r5",
+      "key": "cart-total",
+      "duration": 10
+    }
+  ]
+}

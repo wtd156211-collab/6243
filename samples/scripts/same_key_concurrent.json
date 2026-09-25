@@ -1,0 +1,36 @@
+{
+  "name": "same_key_concurrent",
+  "max_waiters": 5,
+  "max_inflight": 3,
+  "default_duration": 30,
+  "default_timeout": 500,
+  "events": [
+    {
+      "t": 0,
+      "arrive": "r1",
+      "key": "acct-7",
+      "duration": 40
+    },
+    {
+      "t": 4,
+      "arrive": "r2",
+      "key": "acct-7"
+    },
+    {
+      "t": 9,
+      "arrive": "r3",
+      "key": "acct-7"
+    },
+    {
+      "t": 12,
+      "arrive": "r4",
+      "key": "acct-7"
+    },
+    {
+      "t": 40,
+      "arrive": "r5",
+      "key": "acct-7",
+      "duration": 20
+    }
+  ]
+}

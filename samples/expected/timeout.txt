@@ -1,0 +1,18 @@
+0000|ARRIVE|r1|stock-42|-|-
+0000|START|-|stock-42|e1|duration=60
+0005|ARRIVE|r2|stock-42|-|-
+0005|MERGE|r2|stock-42|e1|pos=2
+0010|ARRIVE|r3|stock-42|-|-
+0010|MERGE|r3|stock-42|e1|pos=3
+0040|CANCEL|r3|stock-42|e1|reason=timeout
+0060|CANCEL|r1|stock-42|e1|reason=timeout
+0060|XEND|-|stock-42|e1|result=ok
+0060|RETURN|r2|stock-42|e1|result=ok
+0070|ARRIVE|r4|basket-9|-|-
+0070|START|-|basket-9|e2|duration=50
+0075|ARRIVE|r5|basket-9|-|-
+0075|MERGE|r5|basket-9|e2|pos=2
+0090|CANCEL|r4|basket-9|e2|reason=timeout
+0095|CANCEL|r5|basket-9|e2|reason=timeout
+0095|XCANCEL|-|basket-9|e2|reason=no_waiters
+0095|SUMMARY|-|-|-|arrive=5 cancel=4 err=0 exec=2 merge=3 ok=1 reject=0 return=1 xcancel=1

@@ -1,0 +1,38 @@
+{
+  "name": "exec_failure",
+  "max_waiters": 3,
+  "max_inflight": 2,
+  "default_duration": 25,
+  "default_timeout": 400,
+  "events": [
+    {
+      "t": 0,
+      "arrive": "r1",
+      "key": "ledger",
+      "duration": 30,
+      "result": "err"
+    },
+    {
+      "t": 6,
+      "arrive": "r2",
+      "key": "ledger"
+    },
+    {
+      "t": 30,
+      "arrive": "r3",
+      "key": "ledger",
+      "duration": 25
+    },
+    {
+      "t": 45,
+      "arrive": "r4",
+      "key": "ledger"
+    },
+    {
+      "t": 60,
+      "arrive": "r5",
+      "key": "ledger",
+      "duration": 10
+    }
+  ]
+}

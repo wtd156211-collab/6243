@@ -1,0 +1,53 @@
+{
+  "name": "limits",
+  "max_waiters": 3,
+  "max_inflight": 2,
+  "default_duration": 50,
+  "default_timeout": 600,
+  "events": [
+    {
+      "t": 0,
+      "arrive": "r1",
+      "key": "k-alpha",
+      "duration": 50
+    },
+    {
+      "t": 2,
+      "arrive": "r2",
+      "key": "k-alpha"
+    },
+    {
+      "t": 4,
+      "arrive": "r3",
+      "key": "k-alpha"
+    },
+    {
+      "t": 6,
+      "arrive": "r4",
+      "key": "k-alpha"
+    },
+    {
+      "t": 8,
+      "arrive": "r5",
+      "key": "k-beta",
+      "duration": 50
+    },
+    {
+      "t": 10,
+      "arrive": "r6",
+      "key": "k-gamma",
+      "duration": 50
+    },
+    {
+      "t": 12,
+      "arrive": "r7",
+      "key": "k-alpha"
+    },
+    {
+      "t": 52,
+      "arrive": "r8",
+      "key": "k-gamma",
+      "duration": 10
+    }
+  ]
+}
