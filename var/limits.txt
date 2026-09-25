@@ -1,0 +1,25 @@
+0000|ARRIVE|r1|k-alpha|-|-
+0000|START|-|k-alpha|e1|duration=50
+0002|ARRIVE|r2|k-alpha|-|-
+0002|MERGE|r2|k-alpha|e1|pos=2
+0004|ARRIVE|r3|k-alpha|-|-
+0004|MERGE|r3|k-alpha|e1|pos=3
+0006|ARRIVE|r4|k-alpha|-|-
+0006|REJECT|r4|k-alpha|-|reason=waiter_limit
+0008|ARRIVE|r5|k-beta|-|-
+0008|START|-|k-beta|e2|duration=50
+0010|ARRIVE|r6|k-gamma|-|-
+0010|REJECT|r6|k-gamma|-|reason=inflight_limit
+0012|ARRIVE|r7|k-alpha|-|-
+0012|REJECT|r7|k-alpha|-|reason=waiter_limit
+0050|XEND|-|k-alpha|e1|result=ok
+0050|RETURN|r1|k-alpha|e1|result=ok
+0050|RETURN|r2|k-alpha|e1|result=ok
+0050|RETURN|r3|k-alpha|e1|result=ok
+0052|ARRIVE|r8|k-gamma|-|-
+0052|START|-|k-gamma|e3|duration=10
+0058|XEND|-|k-beta|e2|result=ok
+0058|RETURN|r5|k-beta|e2|result=ok
+0062|XEND|-|k-gamma|e3|result=ok
+0062|RETURN|r8|k-gamma|e3|result=ok
+0062|SUMMARY|-|-|-|arrive=8 cancel=0 err=0 exec=3 merge=2 ok=3 reject=3 return=5 xcancel=0

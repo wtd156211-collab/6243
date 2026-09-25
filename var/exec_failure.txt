@@ -1,0 +1,19 @@
+0000|ARRIVE|r1|ledger|-|-
+0000|START|-|ledger|e1|duration=30
+0006|ARRIVE|r2|ledger|-|-
+0006|MERGE|r2|ledger|e1|pos=2
+0030|XEND|-|ledger|e1|result=err
+0030|RETURN|r1|ledger|e1|result=err
+0030|RETURN|r2|ledger|e1|result=err
+0030|ARRIVE|r3|ledger|-|-
+0030|START|-|ledger|e2|duration=25
+0045|ARRIVE|r4|ledger|-|-
+0045|MERGE|r4|ledger|e2|pos=2
+0055|XEND|-|ledger|e2|result=ok
+0055|RETURN|r3|ledger|e2|result=ok
+0055|RETURN|r4|ledger|e2|result=ok
+0060|ARRIVE|r5|ledger|-|-
+0060|START|-|ledger|e3|duration=10
+0070|XEND|-|ledger|e3|result=ok
+0070|RETURN|r5|ledger|e3|result=ok
+0070|SUMMARY|-|-|-|arrive=5 cancel=0 err=1 exec=3 merge=2 ok=2 reject=0 return=5 xcancel=0
